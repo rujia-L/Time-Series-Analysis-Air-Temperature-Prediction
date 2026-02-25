@@ -9,18 +9,18 @@ This project builds high-accuracy predictors for local outdoor **air temperature
 Course project at Lund University (Mathematical Statistics). :contentReference[oaicite:3]{index=3}
 
 ## Dataset
-The dataset contains multi-year measurements of air temperature and radiation-related variables (e.g., net radiation, reflected shortwave radiation, earth heat flux). :contentReference[oaicite:4]{index=4}  
-In the final solution, net radiation is used as the primary external input in the Box–Jenkins model. :contentReference[oaicite:5]{index=5}
+The dataset contains multi-year measurements of air temperature and radiation-related variables (e.g., net radiation, reflected shortwave radiation, earth heat flux).
+In the final solution, net radiation is used as the primary external input in the Box–Jenkins model. 
 
 ### Data splitting (used in the report)
 - Training: an ~8-week summer segment selected for approximate stationarity
 - Validation: the following weeks right after training
-- Tests: (1) near training period, (2) a winter week, (3) a long later segment with more variation/trend :contentReference[oaicite:6]{index=6}
+- Tests: (1) near training period, (2) a winter week, (3) a long later segment with more variation/trend
 
 ## Methods
 
 ### Part A — Baseline ARMA (temperature only)
-- Identified strong daily periodicity (period ≈ 24), applied seasonal differencing, then fit ARMA and validated via residual diagnostics. :contentReference[oaicite:7]{index=7}
+- Identified strong daily periodicity (period ≈ 24), applied seasonal differencing, then fit ARMA and validated via residual diagnostics. 
 
 ### Part B — Box–Jenkins / ARMAX (with external input)
 - Modeled the **input (net radiation)** with its own ARMA structure (after seasonal differencing). :contentReference[oaicite:8]{index=8}  
@@ -43,10 +43,4 @@ Performance is reported using **normalized variance** of the k-step prediction r
 ### Generalization across seasons/segments (ARMAX vs naïve)
 The model also improved performance on a winter test week and on a later long segment, though accuracy depends on how stable the periodic pattern is. :contentReference[oaicite:14]{index=14}
 
-## How to run
-> Replace filenames/paths below to match your repository structure.
 
-```bash
-# (example) install dependencies
-# pip install -r requirements.txt
-# or use MATLAB/R scripts depending on your implementation
